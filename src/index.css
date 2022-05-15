@@ -24,13 +24,11 @@ td {
   
   cursor: pointer;
   position: relative;
-  height: 150px;
-  width: 150px;
+  height: 50px;
+  width: 50px;
   vertical-align: middle;
   padding: 3px;
-  overflow: auto;
-
-  
+  overflow: auto;  
 }
 
 td.active {

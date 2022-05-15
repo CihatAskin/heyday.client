@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
-import Row from './Row';
+import Header from './Header';
+import { DAYS, HOURS } from '../actions/constants';
+import Body from './Body';
+
 export default class Table extends Component {
   render() {
     return (
       <table>
-        <thead>
-          <tr>
-            <th>asd</th>
-            <th>asd</th>
-            <th>asd</th>
-          </tr>
-        </thead>
-        <tbody>
-          <Row id='1'></Row>
-          <Row id='2'></Row>
-        </tbody>
+        <Header days={DAYS}></Header>
+        <Body days={DAYS} hours={HOURS}></Body>
       </table>
     );
   }

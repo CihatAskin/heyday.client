@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
+import { MainType } from '../actions/types';
 import Cell from './Cell';
 
 interface RowProps {
-  id: string;
+  days: MainType[];
+  hour: MainType;
 }
 
 export default class Row extends Component<RowProps> {
   constructor(props: RowProps) {
-    super(props);
+    super(props); 
+    console.log(this.props.hour.order)
+
   }
 
   render() {
     return (
-      <tr>
-        <Cell id={'1' + this.props.id}></Cell>
-        <Cell id={'2' + this.props.id}></Cell>
-        <Cell id={'3' + this.props.id}></Cell>
+      <tr key={this.props.hour.id}>
+        {this.props.days.map((item) => (
+          <Cell key={`${this.props.hour.order}${item.order}`}
+            id={`${this.props.hour.order}${item.order}`}
+            title={this.props.hour.name}
+          ></Cell>
+        ))}
       </tr>
     );
   }

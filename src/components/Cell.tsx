@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 interface CellProps {
   id: string;
+  title: string;
 }
 
 interface CellState {
@@ -23,12 +24,10 @@ export default class Cell extends Component<CellProps, CellState> {
 
   handleMouseOver = (e: any): void => {
     e.target.classList.add('over');
-
   };
 
   handleMouseLeave = (e: any): void => {
     e.target.classList.remove('over');
-
   };
 
   render() {
@@ -41,9 +40,9 @@ export default class Cell extends Component<CellProps, CellState> {
         rowSpan={1}
         colSpan={1}
         key={this.props.id}
-      ></td>
+      >
+        {this.props.title}
+      </td>
     );
   }
-
-
 }
