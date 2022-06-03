@@ -1,6 +1,7 @@
 export enum ActionTypes {
-  weekdays,
-  weekends
+  thisWeek='This Week',
+  nextWeek='Next Week',
+  startWeek='Start Week'
 }
 
 export interface MainType {

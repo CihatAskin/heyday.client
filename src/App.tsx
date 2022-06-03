@@ -8,7 +8,7 @@ import React from 'react';
 function App() {
   return (
     <React.Fragment>
-      <DateSettings/>
+      <DateSettings id='asd' title='aaaa'/>
       <Table/>
       <ActionArea/>
       <ScheduleSettings/>

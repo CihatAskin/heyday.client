@@ -10,8 +10,6 @@ interface RowProps {
 export default class Row extends Component<RowProps> {
   constructor(props: RowProps) {
     super(props); 
-    console.log(this.props.hour.order)
-
   }
 
   render() {
