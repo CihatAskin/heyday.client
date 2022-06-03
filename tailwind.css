@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+@layer base {
+  html,
+  body {
+    font-family: 'Open Sans', sans-serif;
+    @apply antialiased;
+  }
+}
+
+th,
+td {
+  @apply bg-celeste border-0 rounded-md select-none;
+}
+
+td {
+  @apply cursor-pointer relative h-12 w-12 align-middle p-3 overflow-auto;
+}
+
+td.active {
+  @apply bg-munsell text-white
+}
+td.over {
+  @apply bg-sky;
+}
