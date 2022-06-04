@@ -20,8 +20,12 @@ td {
 }
 
 td.active {
-  @apply bg-munsell text-white
+  @apply bg-munsell text-white;
 }
 td.over {
   @apply bg-sky;
+}
+
+input.radio-action {
+  @apply mr-2 h-5 w-5 align-sub;
 }

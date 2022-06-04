@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ActionTypes } from '../actions/types';
+import { DatePicker } from './DatePicker';
 
 interface DateSettingsProps {
   id: string;
@@ -8,6 +9,7 @@ interface DateSettingsProps {
 
 interface DateSettingsState {
   week: ActionTypes;
+  startDate: Date;
 }
 
 export default class DateSettings extends Component<
@@ -17,54 +19,89 @@ export default class DateSettings extends Component<
   constructor(props: DateSettingsProps) {
     super(props);
 
-    this.state = { week: ActionTypes.thisWeek };
+    this.state = {
+      week: ActionTypes.thisWeek,
+      startDate: new Date(),
+    };
   }
 
-  handleChange = (e: any): void => {
-    console.log('radio ', e.target.value);
-    this.setState({ week: e.target.value });
-    console.log('radio ', this.state);
+  today: Date = new Date();
+  sevenDaysAfter: Date = new Date(this.today.getTime() + (7 * 86400000));
+
+  handleChange = (action: ActionTypes, date: Date): void => {
+    this.setState({ week: action, startDate: date });
   };
 
   render() {
     return (
       <div className="bg-minion h-11 flex flex-row items-center justify-center gap-x-4">
+
         <div>
           <input
             type="radio"
-            value={ActionTypes.thisWeek}
-            id={ActionTypes.thisWeek}
-            onChange={(e) => this.handleChange(e)}
+            value={ActionTypes[ActionTypes.thisWeek]}
+            id={ActionTypes[ActionTypes.thisWeek]}
+            onChange={(e) =>
+              this.handleChange(
+                ActionTypes[e.target.value as keyof typeof ActionTypes],
+                this.today
+              )
+            }
             checked={this.state.week === ActionTypes.thisWeek}
             name="week"
-            className='mr-2 h-5 w-5 align-sub'
+            className="radio-action"
           />
-          <label htmlFor={ActionTypes.thisWeek}>{ActionTypes.thisWeek}</label>
+          <label htmlFor={ActionTypes[ActionTypes.thisWeek]}>This Week</label>
         </div>
+
         <div>
           <input
             type="radio"
-            value={ActionTypes.nextWeek}
-            id={ActionTypes.nextWeek}
-            onChange={(e) => this.handleChange(e)}
+            value={ActionTypes[ActionTypes.nextWeek]}
+            id={ActionTypes[ActionTypes.nextWeek]}
+            onChange={(e) =>
+              this.handleChange(
+                ActionTypes[e.target.value as keyof typeof ActionTypes],
+                this.sevenDaysAfter
+              )
+            }
             checked={this.state.week === ActionTypes.nextWeek}
-            name={ActionTypes.nextWeek}
-            className='mr-2 h-5 w-5 align-sub'
+            name="week"
+            className="radio-action"
           />
-          <label htmlFor={ActionTypes.nextWeek}>{ActionTypes.nextWeek}</label>{' '}
+          <label htmlFor={ActionTypes[ActionTypes.nextWeek]}>Next Week</label>{' '}
         </div>
         <div>
           <input
             type="radio"
-            value={ActionTypes.startWeek}
-            id={ActionTypes.startWeek}
-            onChange={(e) => this.handleChange(e)}
+            value={ActionTypes[ActionTypes.startWeek]}
+            id={ActionTypes[ActionTypes.startWeek]}
+            onChange={(e) =>
+              this.handleChange(
+                ActionTypes[e.target.value as keyof typeof ActionTypes],
+                this.today
+              )
+            }
             checked={this.state.week === ActionTypes.startWeek}
-            name={ActionTypes.startWeek}
-            className='mr-2 h-5 w-5 align-sub'
+            name="week"
+            className="radio-action"
           />
-          <label htmlFor={ActionTypes.startWeek}>{ActionTypes.startWeek}</label>
+          <label htmlFor={ActionTypes[ActionTypes.startWeek]}>Start Week</label>
         </div>
+
+        <div>
+          <DatePicker
+            selected={this.state.startDate}
+            onChange={(date: Date) =>    this.handleChange(
+              ActionTypes.startWeek,
+              date
+            )}
+            minDate={new Date()}
+            className="border-solid border-2 border-sky rounded-md pl-2 w-28"
+            dateFormat="yyyy/MM/dd"
+          />
+        </div>
+        
       </div>
     );
   }
