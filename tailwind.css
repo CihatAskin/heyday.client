@@ -29,3 +29,8 @@ td.over {
 input.radio-action {
   @apply mr-2 h-5 w-5 align-sub;
 }
+.action-button{
+  @apply bg-sky py-1 px-2 rounded-full font-semibold text-[#064663] 
+         hover:bg-munsell hover:text-white 
+         active:bg-sky active:text-munsell;
+}

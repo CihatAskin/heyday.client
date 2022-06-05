@@ -9,3 +9,11 @@ export interface MainType {
   name: string;
   order: number;
 }
+
+export interface Option {
+  readonly value: string;
+  readonly label: string;
+  readonly color: string;
+  readonly isFixed?: boolean;
+  readonly isDisabled?: boolean;
+}
