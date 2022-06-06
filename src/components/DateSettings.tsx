@@ -3,8 +3,7 @@ import { ActionTypes } from '../actions/types';
 import { DatePicker } from './DatePicker';
 
 interface DateSettingsProps {
-  id: string;
-  title: string;
+  onChange(date: Date): void;
 }
 
 interface DateSettingsState {
@@ -26,16 +25,17 @@ export default class DateSettings extends Component<
   }
 
   today: Date = new Date();
-  sevenDaysAfter: Date = new Date(this.today.getTime() + (7 * 86400000));
+  sevenDaysAfter: Date = new Date(this.today.getTime() + 7 * 86400000);
 
   handleChange = (action: ActionTypes, date: Date): void => {
-    this.setState({ week: action, startDate: date });
+    this.setState({ week: action, startDate: date }, () =>
+      this.props.onChange(date)
+    );
   };
 
   render() {
     return (
       <div className="bg-minion h-11 flex flex-row items-center justify-center gap-x-4">
-
         <div>
           <input
             type="radio"
@@ -92,16 +92,14 @@ export default class DateSettings extends Component<
         <div>
           <DatePicker
             selected={this.state.startDate}
-            onChange={(date: Date) =>    this.handleChange(
-              ActionTypes.startWeek,
-              date
-            )}
+            onChange={(date: Date) =>
+              this.handleChange(ActionTypes.startWeek, date)
+            }
             minDate={new Date()}
             className="border-solid border-2 border-sky rounded-md pl-2 w-28"
             dateFormat="yyyy/MM/dd"
           />
         </div>
-        
       </div>
     );
   }

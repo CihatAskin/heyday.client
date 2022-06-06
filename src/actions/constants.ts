@@ -1,13 +1,14 @@
 import { MainType } from './types';
 
 export const DAYS: MainType[] = [
-  { id: 'd2062e1d-797c-4236-8736-ada621b9a022', name: 'Mon', order: 1 },
-  { id: '2f7f779e-d9f1-4250-88ab-5049cdf1f0ca', name: 'Tue', order: 2 },
-  { id: '338268e5-67a1-4f8e-aaf5-4330f45b3e0f', name: 'Wed', order: 3 },
-  { id: '27ba8229-eee0-42c7-8043-e98186714bbf', name: 'Thu', order: 4 },
-  { id: '1e750c8e-7690-427a-850f-1f3cba512f26', name: 'Fri', order: 5 },
-  { id: 'f4663781-bc2e-47de-8cfc-39a5a60b4383', name: 'Sat', order: 6 },
-  { id: '9b15f81f-c61b-4e40-9852-7a20332c007f', name: 'Sun', order: 7 },
+  
+  { id: '9b15f81f-c61b-4e40-9852-7a20332c007f', name: 'Sun', order: 1 },
+  { id: 'd2062e1d-797c-4236-8736-ada621b9a022', name: 'Mon', order: 2 },
+  { id: '2f7f779e-d9f1-4250-88ab-5049cdf1f0ca', name: 'Tue', order: 3 },
+  { id: '338268e5-67a1-4f8e-aaf5-4330f45b3e0f', name: 'Wed', order: 4 },
+  { id: '27ba8229-eee0-42c7-8043-e98186714bbf', name: 'Thu', order: 5 },
+  { id: '1e750c8e-7690-427a-850f-1f3cba512f26', name: 'Fri', order: 6 },
+  { id: 'f4663781-bc2e-47de-8cfc-39a5a60b4383', name: 'Sat', order: 7 },
 ];
 
 export const HOURS: MainType[] = [
