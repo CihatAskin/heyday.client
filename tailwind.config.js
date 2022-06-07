@@ -7,6 +7,7 @@ module.exports = {
         sky: '#71DFE7',
         celeste: '#C2FFF9',
         minion: '#FFE652',
+        bulgar:'#8B1515',
       },
       gridTemplateColumns: {
         // Simple 16 column grid

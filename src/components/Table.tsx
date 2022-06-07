@@ -14,7 +14,7 @@ export default class Table extends Component<TableProps> {
 
   render() {
     return (
-      <table>
+      <table className='shadow appearance-none w-full text-bulgar'>
         <Header
           weekDay={this.props.startDate.getDay()}
           monthDay={this.props.startDate.getDate()}

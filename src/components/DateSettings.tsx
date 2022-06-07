@@ -35,7 +35,7 @@ export default class DateSettings extends Component<
 
   render() {
     return (
-      <div className="bg-minion h-11 flex flex-row items-center justify-center gap-x-4">
+      <div className="bg-minion h-11 flex flex-row items-center justify-center gap-x-4 border-solid border-2 border-sky border-b-0">
         <div>
           <input
             type="radio"

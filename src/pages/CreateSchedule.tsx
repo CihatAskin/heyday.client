@@ -23,14 +23,14 @@ export default class CreateSchedule extends Component<{}, CreateScheduleState> {
   render() {
     return (
       <div className="grid grid-cols-schedule gap-4">
-        <div className="border-4 border-indigo-500">
+        <div >
           <DateSettings onChange={this.changeStartDate} />
           <Table startDate={this.state.startDate} />
         </div>
-        <div className="border-4 border-indigo-500">
+        <div >
           <ScheduleSettings />
         </div>
-        <div className="col-span-2 border-4 border-indigo-500">
+        <div className="col-span-2 ">
           <ActionArea />
         </div>
       </div>

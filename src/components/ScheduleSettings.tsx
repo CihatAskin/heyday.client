@@ -4,8 +4,8 @@ import Participants from '../components/Participants';
 export default class ScheduleSettings extends Component {
   render() {
     return (
-      <div className="w-full max-w-none">
-        <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <div className='h-full'>
+        <form className="bg-sky h-full shadow-md rounded px-8 pt-6 pb-8">
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
@@ -17,7 +17,7 @@ export default class ScheduleSettings extends Component {
               required
               id="title"
               type="text"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-minion focus:shadow-outline"
             />
           </div>
           <div className="mb-6">
@@ -31,7 +31,7 @@ export default class ScheduleSettings extends Component {
               id="description"
               maxLength={100}
               rows={10}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-minion focus:shadow-outline"
             />
           </div>
           <div className="mb-6">
@@ -49,7 +49,7 @@ export default class ScheduleSettings extends Component {
                   Hours
                 </label>
                 <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-minion focus:shadow-outline"
                   id="hours"
                   type="number"
                   min={0}
@@ -65,7 +65,7 @@ export default class ScheduleSettings extends Component {
                   Minutes
                 </label>
                 <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-minion focus:shadow-outline"
                   id="minutes"
                   type="number"
                   min={0}
