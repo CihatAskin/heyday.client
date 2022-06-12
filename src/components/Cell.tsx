@@ -40,6 +40,7 @@ export default class Cell extends Component<CellProps, CellState> {
         rowSpan={1}
         colSpan={1}
         key={this.props.id}
+        id={this.props.id}
       >
         {this.props.title}
       </td>

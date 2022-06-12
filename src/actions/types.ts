@@ -17,3 +17,20 @@ export interface Option {
   readonly isFixed?: boolean;
   readonly isDisabled?: boolean;
 }
+
+export interface ScheduleCreateModel {
+  title: string;
+  description: string;
+  period: string;
+  startDate: Date;
+  managerId: string;
+  userIds: string[];
+  hourKeys: number[];
+}
+
+export interface ScheduleForm {
+  title: string;
+  description: string;
+  hours: number,
+  minutes: number,
+}

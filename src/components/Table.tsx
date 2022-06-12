@@ -5,6 +5,7 @@ import Body from './Body';
 
 interface TableProps {
   startDate: Date;
+  selectedHours:number[];
 }
 
 export default class Table extends Component<TableProps> {
