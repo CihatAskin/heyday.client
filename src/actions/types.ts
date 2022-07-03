@@ -1,7 +1,7 @@
 export enum ActionTypes {
   thisWeek,
   nextWeek,
-  startWeek
+  startWeek,
 }
 
 export interface MainType {
@@ -31,6 +31,17 @@ export interface ScheduleCreateModel {
 export interface ScheduleForm {
   title: string;
   description: string;
-  hours: number,
-  minutes: number,
+  hours: number;
+  minutes: number;
+}
+
+export interface ITableContext {
+  pushHoursKey(hourKey: number): void;
+  popHoursKey (hourKey: number): void;
+}
+
+export interface ScheduleListData {
+  id: string;
+  title: string;
+  status: string;
 }

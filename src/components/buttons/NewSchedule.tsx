@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-export default class Calender extends Component {
+export default class NewSchedule extends Component {
   render() {
     return (
-      <div>Calender</div>
+      <div>New</div>
     )
   }
 }

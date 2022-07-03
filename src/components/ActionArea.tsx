@@ -37,14 +37,19 @@ export default class ActionArea extends Component<ActionAreaProps> {
     return `${hour}:${minute}`;
   };
 
-  saveClick = (e: any): void => {    
+  saveClick = (e: any): void => {
     let data = this.props.getCreateModel();
 
-    console.log('save data', data);
+    console.log('save data', JSON.stringify(data));
 
-    // axios.post('https://localhost:7086/api/Schedule', data).then((response) => {
-    //   console.log('response', { response });
-    // });
+    axios
+      .post('https://localhost:7086/api/Schedule', data)
+      .then((response) => {
+        console.log('response', { response });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   render() {

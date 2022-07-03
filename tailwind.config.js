@@ -14,6 +14,7 @@ module.exports = {
         schedule: 'repeat(2, minmax(200px, 1fr))',
 
         // Complex site-specific column configuration
+        list: 'repeat(4, minmax(200px, 1fr))',
         footer: '200px minmax(900px, 1fr) 100px',
       },
     },

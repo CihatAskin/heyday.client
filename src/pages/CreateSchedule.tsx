@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Table from '../components/Table';
+import Table from '../components/tables/scheduleCreateTable/Table';
 import DateSettings from '../components/DateSettings';
 import ActionArea from '../components/ActionArea';
 import ScheduleSettings from '../components/ScheduleSettings';
 import { ScheduleCreateModel, ScheduleForm } from '../actions/types';
+import { TableContext } from '../contexts/TableContext';
 
 interface CreateScheduleState {
   title: string;
@@ -50,12 +51,22 @@ export default class CreateSchedule extends Component<
       description: form.description,
       hours: form.hours,
       minutes: form.minutes,
-      period: `${form.hours}:${form.minutes}:00`,
+      period: `0${form.hours}:0${form.minutes}:00`,
     });
   };
 
   changeParticipants = (users: string[]): void => {
     this.setState({ userIds: [...users] });
+  };
+
+  pushHoursKey = (hourKey: number): void => {
+    this.state.hourKeys.push(hourKey);
+    this.setState({ hourKeys: [...this.state.hourKeys] });
+  };
+
+  popHoursKey = (hourKey: number): void => {
+    let arr = this.state.hourKeys.filter((x) => x !== hourKey);
+    this.setState({ hourKeys: [...arr] });
   };
 
   getCreateModel = (): ScheduleCreateModel => {
@@ -72,29 +83,33 @@ export default class CreateSchedule extends Component<
 
   render() {
     return (
-      <div className="grid grid-cols-schedule gap-4">
-        <div>
-          <DateSettings onChange={this.changeStartDate} />
-          <Table
-            startDate={this.state.startDate}
-            selectedHours={this.state.hourKeys}
-          />
+      <TableContext.Provider
+        value={{
+          pushHoursKey: this.pushHoursKey,
+          popHoursKey: this.popHoursKey,
+        }}
+      >
+        <div className="grid grid-cols-schedule gap-4">
+          <div>
+            <DateSettings onChange={this.changeStartDate} />
+            <Table startDate={this.state.startDate} />
+          </div>
+          <div>
+            <ScheduleSettings
+              title={this.state.title}
+              description={this.state.description}
+              hours={this.state.hours}
+              minutes={this.state.minutes}
+              changeForm={this.changeForm}
+              userIds={this.state.userIds}
+              changeParticipants={this.changeParticipants}
+            />
+          </div>
+          <div className="col-span-2 ">
+            <ActionArea getCreateModel={this.getCreateModel} />
+          </div>
         </div>
-        <div>
-          <ScheduleSettings
-            title={this.state.title}
-            description={this.state.description}
-            hours={this.state.hours}
-            minutes={this.state.minutes}
-            changeForm={this.changeForm}
-            userIds={this.state.userIds}
-            changeParticipants={this.changeParticipants}
-          />
-        </div>
-        <div className="col-span-2 ">
-          <ActionArea getCreateModel={this.getCreateModel} />
-        </div>
-      </div>
+      </TableContext.Provider>
     );
   }
 }

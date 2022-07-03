@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import CreatableSelect from 'react-select/creatable';
-import { Option } from '../actions/types';
+import { Option } from '../../actions/types';
 import { ActionMeta, OnChangeValue } from 'react-select';
 
 const getFellows = (): Option[] => {

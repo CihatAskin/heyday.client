@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { MainType } from '../actions/types';
-import { DAYS, HOURS } from '../actions/constants';
+import { MainType } from '../../../actions/types';
+import { DAYS, HOURS } from '../../../actions/constants';
 
 interface HeaderProps {
   weekDay: number;

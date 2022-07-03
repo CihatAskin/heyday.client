@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MainType } from '../actions/types';
+import { MainType } from '../../../actions/types';
 import Row from './Row';
 
 interface BodyProps {

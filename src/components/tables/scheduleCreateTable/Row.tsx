@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MainType } from '../actions/types';
+import { MainType } from '../../../actions/types';
 import Cell from './Cell';
 
 interface RowProps {
@@ -8,9 +8,6 @@ interface RowProps {
 }
 
 export default class Row extends Component<RowProps> {
-  constructor(props: RowProps) {
-    super(props); 
-  }
 
   render() {
     return (

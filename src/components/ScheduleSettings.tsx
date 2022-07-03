@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Participants from '../components/Participants';
+import Participants from './selects/Participants';
 import { ScheduleForm } from '../actions/types';
 
 interface ScheduleSettingsProps {
