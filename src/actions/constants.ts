@@ -1,5 +1,6 @@
 import { MainType } from './types';
 
+
 export const DAYS: MainType[] = [
   
   { id: '9b15f81f-c61b-4e40-9852-7a20332c007f', name: 'Sun', order: 1 },

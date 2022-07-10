@@ -1,32 +1,26 @@
-import React, { Component } from 'react';
-import { ScheduleListData } from '../../actions/types';
+import React, { Component } from 'react'
 
-interface ScheduleListProps {
-  data: ScheduleListData[];
-}
-
-export default class ScheduleListTable extends Component<ScheduleListProps> {
-  constructor(props: ScheduleListProps) {
-    super(props);
-  }
-  header = [
-    {
-      Header: 'Column 1',
-      accessor: 'col1', // accessor is the "key" in the data
-    },
-    {
-      Header: 'Column 2',
-      accessor: 'col2',
-    },
-    {
-      Header: 'Column 3',
-      accessor: 'col3',
-    },
-  ];
-
+export default class ScheduleListTable extends Component {
   render() {
     return (
-     <div></div>
-    );
+      <table id='list' className='border-collapse border border-slate-400 w-full bg-white text-sm shadow-sm'>
+        <thead>
+          <tr>
+            <th >Title</th>
+            <th >Duration</th>
+            <th >Participants</th>
+            <th >Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Game Night</td>
+            <td>15 min</td>
+            <td>4/5</td>
+            <td>All</td>
+          </tr>
+        </tbody>
+      </table>
+    )
   }
 }

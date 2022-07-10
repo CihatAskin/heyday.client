@@ -4,6 +4,13 @@ export enum ActionTypes {
   startWeek,
 }
 
+export enum ListStatus {
+  all,
+  waiting,
+  completed,
+  outOfTime,
+}
+
 export interface MainType {
   id: string;
   name: string;
@@ -43,5 +50,5 @@ export interface ITableContext {
 export interface ScheduleListData {
   id: string;
   title: string;
-  status: string;
+  status: ListStatus;
 }
