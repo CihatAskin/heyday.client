@@ -30,7 +30,8 @@ export default class ListSchedules extends Component<
   }
 
   titleOnChange = (title: string): void => {
-    console.log('title', title);
+   
+    this.setState({title:title},()=> console.log('title', title));
   };
 
   statusOnChange = (status: ListStatus): void => {
@@ -38,18 +39,13 @@ export default class ListSchedules extends Component<
   };
 
   render() {
+    
     return (
       <div className="grid grid-cols-list gap-4 border-solid border-2 border-sky-500">
-        <div className="col-span-4 h-20">BOŞ</div>
-
-        <div className="w-1/7">BOŞ</div>
+  
         <div className="col-span-2 ">
           <ListActionArea />
         </div>
-
-        <div className="w-1/7">BOŞ</div>
-
-        <div className="w-1/7">BOŞ</div>
 
         <div >
           <Search
@@ -59,12 +55,9 @@ export default class ListSchedules extends Component<
           <ScheduleListTable />
         </div>
 
-        <div>
+   
           <UserConnections />
-        </div>
-
-        <div className="w-1/7">BOŞ</div>
-        <div className="col-span-4 h-20">BOŞ</div>
+      
       </div>
     );
   }

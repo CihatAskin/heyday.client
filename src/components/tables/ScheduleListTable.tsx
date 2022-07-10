@@ -17,7 +17,7 @@ export default class ScheduleListTable extends Component {
             <td>Game Night</td>
             <td>15 min</td>
             <td>4/5</td>
-            <td>All</td>
+            <td>Waiting</td>
           </tr>
         </tbody>
       </table>

@@ -11,19 +11,19 @@
   }
 }
 
-th,
-td {
+table#date-table th,
+table#date-table td {
   @apply bg-celeste select-none border-solid border-2 border-sky;
 }
 
-td {
+table#date-table td {
   @apply cursor-pointer p-3 overflow-auto;
 }
 
-td.active {
+table#date-table td.active {
   @apply bg-munsell text-white;
 }
-td.over {
+table#date-table td.over {
   @apply bg-sky;
 }
 
@@ -40,7 +40,7 @@ input.radio-action {
 }
 
 table#list th,td{
-  @apply  border border-slate-300
+  @apply  border border-slate-300 bg-munsell text-minion p-2
 }
 
 #connections li{

@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 
 export default class UserConnections extends Component {
-  /**
-   *
-   */
-  constructor({}) {
-    super({});
-  }
+  
   handleClick = (e: any) => {
     e.target.classList.toggle('active');
   };
+  
   render() {
     return (
       <div>
